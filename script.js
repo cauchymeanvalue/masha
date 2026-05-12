@@ -57,14 +57,25 @@ function destroyImage() {
 
 function showNextText() {
   if (destructionLevel > messages.length) return;
-  
-  const p = document.createElement('p');
-  p.textContent = messages[destructionLevel - 1];
-  textsContainer.appendChild(p);
-  
-  setTimeout(() => {
-    p.style.opacity = '1';
-  }, 100);
+  const existing = document.querySelector('.message-card');
+  if (existing) existing.remove();
+
+  const card = document.createElement('div');
+  card.className = 'message-card';
+  card.innerHTML = `
+    <span class="close-btn">✕</span>
+    <p>${messages[destructionLevel - 1]}</p>
+  `;
+
+  textsContainer.appendChild(card);
+
+  setTimeout(() => card.style.opacity = '1', 50);
+
+  card.querySelector('.close-btn').addEventListener('click', (e) => {
+    e.stopPropagation(); 
+    card.style.opacity = '0';
+    setTimeout(() => card.remove(), 400);
+  });
 }
 
 //buttons clicks etc
