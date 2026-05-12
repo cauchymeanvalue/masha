@@ -20,7 +20,7 @@ const messages = [
 
 //pic load
 
-img.src = 'assets/image.jpg';
+img.src = './assets/image.jpg';
 
 img.onload = () => {
   console.log('image loaded', img.width, 'x', img.height);
