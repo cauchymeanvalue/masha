@@ -83,9 +83,9 @@ canvas.addEventListener('click', (e) => {
 
 //restart button
 
-document.querySelector('button').addEventListener('click', () => {
-  location.reload();
-});
+//document.querySelector('button').addEventListener('click', () => {
+//  location.reload();
+//});
 
 
 //zoom
