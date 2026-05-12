@@ -49,16 +49,6 @@ h1 {
   image-rendering: pixelated; /* важно для pixelate эффекта */
 }
 
-.overlay-texts {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 50;
-  text-align: center;
-  pointer-events: none;
-}
-
 .message-card {
   position: relative;
   background: rgba(0, 0, 0, 0.75);
